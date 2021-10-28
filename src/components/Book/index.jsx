@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function HomeBook({ title, image, authors, shelf, changeShelfBook }) {
+function HomeBook({ title, image, authors, shelf = "none", changeShelfBook }) {
 	const [currentShelf, setCurrentShelf] = useState(shelf);
 
 	const handleChange = (e) => {
@@ -13,7 +13,7 @@ function HomeBook({ title, image, authors, shelf, changeShelfBook }) {
 		<article key={title}>
 			<img src={image} alt={title} />
 			<h4>{title}</h4>
-			<cite>{authors.map((a) => a)}</cite>
+			<cite>{authors?.map((a) => a)}</cite>
 			<select value={currentShelf} onChange={handleChange}>
 				<option value="moveTo" disabled>
 					Move to...
