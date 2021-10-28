@@ -1,8 +1,8 @@
 import { useState } from "react";
 import InputSearch from "../../components/InputSearch";
-import { searchBook } from "../../services/books";
 import ListBooks from "../../components/ListBooks";
 import { useBooks } from "../../hooks/useBooks";
+import { searchBook } from "../../services/books";
 import "./styles.css";
 
 function Search() {

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import { getAllBooks } from "../../services/books";
 import ListBooks from "../../components/ListBooks";
 import { useBooks } from "../../hooks/useBooks";
+import { getAllBooks } from "../../services/books";
 import "./styles.css";
 
 function Home() {
