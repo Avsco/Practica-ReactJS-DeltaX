@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./styles.css";
 
 function HomeBook({ title, image, authors, shelf = "none", changeShelfBook }) {
 	const [currentShelf, setCurrentShelf] = useState(shelf);

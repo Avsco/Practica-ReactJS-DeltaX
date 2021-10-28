@@ -3,6 +3,7 @@ import InputSearch from "../../components/InputSearch";
 import { searchBook } from "../../services/books";
 import ListBooks from "../../components/ListBooks";
 import { useBooks } from "../../hooks/useBooks";
+import "./styles.css";
 
 function Search() {
 	const { books, setBooks, changeShelfBook } = useBooks();
