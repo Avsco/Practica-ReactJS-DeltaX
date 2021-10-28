@@ -12,8 +12,8 @@ export const getAllBooks = () =>
 		.then((res) => res.json())
 		.then((data) => data.books);
 
-export const updateBook = (book, shelf) =>
-	fetch(`${ROOT_URL}/books/${book.id}`, {
+export const updateBook = (bookId, shelf) =>
+	fetch(`${ROOT_URL}/books/${bookId}`, {
 		method: "PUT",
 		headers: {
 			...HEADERS,
