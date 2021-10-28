@@ -1,21 +1,14 @@
-import { ROOT_URL } from "./options";
+import { ROOT_URL, HEADERS } from "./options";
 
 // Generate a unique token for storing your bookshelf data on the backend server.
-let token = localStorage.token;
-if (!token) token = localStorage.token = Math.random().toString(36).substr(-8);
-
-const headers = {
-	Accept: "application/json",
-	Authorization: token,
-};
 
 export const getBook = (bookId) =>
-	fetch(`${ROOT_URL}/books/${bookId}`, { headers })
+	fetch(`${ROOT_URL}/books/${bookId}`, { headers: HEADERS })
 		.then((res) => res.json())
 		.then((data) => data.book);
 
 export const getAllBooks = () =>
-	fetch(`${ROOT_URL}/books`, { headers })
+	fetch(`${ROOT_URL}/books`, { headers: HEADERS })
 		.then((res) => res.json())
 		.then((data) => data.books);
 
@@ -23,7 +16,7 @@ export const updateBook = (book, shelf) =>
 	fetch(`${ROOT_URL}/books/${book.id}`, {
 		method: "PUT",
 		headers: {
-			...headers,
+			...HEADERS,
 			"Content-Type": "application/json",
 		},
 		body: JSON.stringify({ shelf }),
@@ -33,7 +26,7 @@ export const searchBook = (query) =>
 	fetch(`${ROOT_URL}/search`, {
 		method: "POST",
 		headers: {
-			...headers,
+			...HEADERS,
 			"Content-Type": "application/json",
 		},
 		body: JSON.stringify({ query }),
