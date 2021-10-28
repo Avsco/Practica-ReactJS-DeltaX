@@ -10,16 +10,18 @@ function InputSearch({ searchBook }) {
 	};
 
 	return (
-		<div>
-			<form onSubmit={handleOnSubmit}>
-				<label>Search: </label>
+		<div className="input-search">
+			<form onSubmit={handleOnSubmit} className="input-search__form">
 				<input
 					autoFocus
 					type="text"
 					value={contentSearch}
 					onChange={(e) => setContentSeach(e.target.value)}
+					className="input-search__input"
 				/>
-				<button type="submit">search</button>
+				<button type="submit" className="input-search__button">
+					Search
+				</button>
 			</form>
 		</div>
 	);

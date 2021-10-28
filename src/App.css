@@ -12,3 +12,11 @@ body,
 .app {
 	background: white;
 }
+
+:root {
+	--primary-color: #4de3d6;
+	--secondary-color: #bdfa61;
+	--background-color: white;
+	--text-color: black;
+	--border-color: black;
+}

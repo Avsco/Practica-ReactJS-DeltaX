@@ -19,7 +19,9 @@ function Header() {
 				<ul className="header__list">
 					{ROUTES.map((r) => (
 						<li key={r.name}>
-							<Link to={r.route}>{r.name}</Link>
+							<Link className="header__link" to={r.route}>
+								{r.name}
+							</Link>
 						</li>
 					))}
 				</ul>

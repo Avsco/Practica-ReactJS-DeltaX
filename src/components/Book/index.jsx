@@ -11,11 +11,11 @@ function HomeBook({ title, image, authors, shelf = "none", changeShelfBook }) {
 	};
 
 	return (
-		<article key={title}>
-			<img src={image} alt={title} />
+		<article key={title} className="book">
+			<div className="book__image" aria-label={title} style={{ backgroundImage: `url(${image})` }}></div>
 			<h4>{title}</h4>
-			<cite>{authors?.map((a) => a)}</cite>
-			<select value={currentShelf} onChange={handleChange}>
+			<cite className="book__author">{authors?.map((a) => a)}</cite>
+			<select className="book__options" value={currentShelf} onChange={handleChange}>
 				<option value="moveTo" disabled>
 					Move to...
 				</option>

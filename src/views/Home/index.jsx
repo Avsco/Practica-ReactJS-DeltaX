@@ -9,6 +9,7 @@ function Home() {
 
 	useEffect(async () => {
 		const response = await getAllBooks();
+		console.log(response);
 		setBooks(() => response);
 	}, []);
 
@@ -28,11 +29,11 @@ function Home() {
 	];
 
 	return (
-		<div>
+		<div className="home">
 			{books &&
 				filterdBooks.map((b) => (
 					<section key={b.nameSection}>
-						<h2>{b.nameSection}</h2>
+						<h2 className="home__title-section">{b.nameSection}</h2>
 						<ListBooks books={b.books} changeShelfBook={changeShelfBook} />
 					</section>
 				))}

@@ -20,7 +20,7 @@ function Search() {
 	};
 
 	return (
-		<div>
+		<div className="search">
 			<h1>SEARCH</h1>
 			<InputSearch searchBook={searchBookByInput} />
 			{error ? <p>No hay resultados</p> : <ListBooks books={books} changeShelfBook={changeShelfBook} />}
