@@ -1,21 +1,10 @@
-import { useEffect, useState } from "react";
-import { getAllBooks, updateBook } from "../../services/books";
+import { useEffect } from "react";
+import { getAllBooks } from "../../services/books";
 import ListHomeBooks from "../../components/ListHomeBooks";
+import { useBooks } from "../../hooks/useBooks";
 
 function Home() {
-	const [books, setBooks] = useState([]);
-
-	const changeShelfBook = ({ value, title }) => {
-		setBooks((lb) =>
-			lb.map((b) => {
-				if (title == b.title) {
-					b.shelf = value;
-					updateBook(b.id, value);
-				}
-				return b;
-			})
-		);
-	};
+	const { books, setBooks, changeShelfBook } = useBooks();
 
 	useEffect(async () => {
 		const response = await getAllBooks();
