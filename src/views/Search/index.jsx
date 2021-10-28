@@ -1,7 +1,7 @@
 import { useState } from "react";
 import InputSearch from "../../components/InputSearch";
 import { searchBook } from "../../services/books";
-import ListHomeBooks from "../../components/ListHomeBooks";
+import ListBooks from "../../components/ListBooks";
 import { useBooks } from "../../hooks/useBooks";
 
 function Search() {
@@ -22,7 +22,7 @@ function Search() {
 		<div>
 			<h1>SEARCH</h1>
 			<InputSearch searchBook={searchBookByInput} />
-			{error ? <p>No hay resultados</p> : <ListHomeBooks books={books} changeShelfBook={changeShelfBook} />}
+			{error ? <p>No hay resultados</p> : <ListBooks books={books} changeShelfBook={changeShelfBook} />}
 		</div>
 	);
 }

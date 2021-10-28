@@ -1,10 +1,11 @@
 import Book from "../Book";
+import "./styles.css";
 
-function ListHomeBooks({ books, changeShelfBook }) {
+function ListBooks({ books, changeShelfBook }) {
 	return books.length == 0 ? (
 		<div>No Hay libros en esta seccion</div>
 	) : (
-		<div>
+		<div className="listBooks">
 			{books.map((b) => (
 				<Book
 					key={b.title}
@@ -19,4 +20,4 @@ function ListHomeBooks({ books, changeShelfBook }) {
 	);
 }
 
-export default ListHomeBooks;
+export default ListBooks;

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { getAllBooks } from "../../services/books";
-import ListHomeBooks from "../../components/ListHomeBooks";
+import ListBooks from "../../components/ListBooks";
 import { useBooks } from "../../hooks/useBooks";
 
 function Home() {
@@ -32,7 +32,7 @@ function Home() {
 				filterdBooks.map((b) => (
 					<section key={b.nameSection}>
 						<h2>{b.nameSection}</h2>
-						<ListHomeBooks books={b.books} changeShelfBook={changeShelfBook} />
+						<ListBooks books={b.books} changeShelfBook={changeShelfBook} />
 					</section>
 				))}
 		</div>

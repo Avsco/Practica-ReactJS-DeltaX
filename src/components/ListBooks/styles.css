@@ -1,0 +1,5 @@
+.listBooks {
+	display: grid;
+	grid-template-rows: auto;
+	grid-template-columns: repeat(5, 1fr);
+}
